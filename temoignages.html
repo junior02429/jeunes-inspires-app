@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Témoignages - Jeunes Inspirés</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1b1464">
+  <link rel="apple-touch-icon" href="images/icone-192.png">
+</head>
+<body>
+  <div class="telephone">
+
+    <div class="entete">
+      <small>Ils ont vécu le changement</small>
+      <h1>Témoignages ⭐</h1>
+    </div>
+
+    <div class="carte temoignage">
+      <div class="membre">
+        <div class="rond"><img src="images/temoin1.jpg" alt="Témoin 1" onerror="this.style.display='none'"></div>
+        <div>
+          <h3>Grâce M.</h3>
+          <p>Participante à la formation Leadership</p>
+        </div>
+      </div>
+      <p class="mot">« Grâce à JI, j'ai osé prendre la parole en public et je dirige maintenant mon propre projet. »</p>
+    </div>
+
+    <div class="carte temoignage">
+      <div class="membre">
+        <div class="rond"><img src="images/temoin2.jpg" alt="Témoin 2" onerror="this.style.display='none'"></div>
+        <div>
+          <h3>Daniel K.</h3>
+          <p>Bénévole</p>
+        </div>
+      </div>
+      <p class="mot">« J'ai trouvé une famille et des amis qui me poussent à avancer chaque jour. »</p>
+    </div>
+
+    <div class="carte temoignage">
+      <div class="membre">
+        <div class="rond"><img src="images/temoin3.jpg" alt="Témoin 3" onerror="this.style.display='none'"></div>
+        <div>
+          <h3>Nom Prénom</h3>
+          <p>Titre ou activité</p>
+        </div>
+      </div>
+      <p class="mot">« Écris ici le témoignage réel de la personne. »</p>
+    </div>
+
+    <!-- Envoyer son témoignage -->
+    <h2 class="titre-section">Partage ton histoire</h2>
+    <div class="carte">
+      <input type="text" id="prenom" placeholder="Ton prénom"
+        style="width:100%; padding:12px; border:1.5px solid #e7e4f3; border-radius:12px; margin-bottom:10px; font-size:15px">
+      <textarea id="texte" rows="4" placeholder="Qu'est-ce que JI a changé pour toi ?"
+        style="width:100%; padding:12px; border:1.5px solid #e7e4f3; border-radius:12px; margin-bottom:10px; font-size:15px; resize:none"></textarea>
+      <button class="bouton" onclick="envoyerTemoignage()" style="width:100%">Envoyer mon témoignage</button>
+    </div>
+
+    <nav class="menu">
+      <a href="accueil.html">🏠<span>Accueil</span></a>
+      <a href="agenda.html">📅<span>Agenda</span></a>
+      <a href="opportunites.html">💼<span>Opportunités</span></a>
+      <a href="declic.html">⚡<span>JI Déclic</span></a>
+      <a href="profil.html">👤<span>Profil</span></a>
+    </nav>
+
+  </div>
+
+  <script src="pwa.js"></script>
+  <script>
+    function envoyerTemoignage() {
+      var prenom = document.getElementById('prenom').value.trim();
+      var texte = document.getElementById('texte').value.trim();
+
+      if (texte === '') {
+        alert("Écris ton témoignage d'abord 🙂");
+        return;
+      }
+
+      var message = "Témoignage JI\nDe : " + (prenom || "Anonyme") + "\n\n" + texte;
+      window.open("https://wa.me/242000000000?text=" + encodeURIComponent(message), "_blank");
+    }
+  </script>
+</body>
+</html>

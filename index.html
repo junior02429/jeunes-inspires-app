@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jeunes Inspirés</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#7a2cf5">
+  <link rel="apple-touch-icon" href="images/icone-192.png">
+</head>
+<body>
+
+  <div class="couverture">
+
+    <!-- Arrière-plan coloré (décoratif) -->
+    <div class="fond" aria-hidden="true">
+      <span class="tache t1"></span>
+      <span class="tache t2"></span>
+      <span class="tache t3"></span>
+      <span class="tache t4"></span>
+      <span class="forme anneau f1"></span>
+      <span class="forme carre f2"></span>
+      <span class="forme point f3"></span>
+      <span class="forme triangle f4"></span>
+      <span class="forme croix f5">+</span>
+      <span class="forme anneau f6"></span>
+      <span class="etoile e1">✦</span>
+      <span class="etoile e2">✦</span>
+      <span class="etoile e3">✦</span>
+      <span class="etoile e4">✦</span>
+      <span class="etoile e5">✦</span>
+      <div class="vague v1"></div>
+      <div class="vague v2"></div>
+    </div>
+
+    <!-- Tout le contenu est centré -->
+    <div class="centre">
+
+      <!-- Logo officiel Jeunes Inspirés (si le fichier est absent, l'emoji s'affiche) -->
+      <div class="logo-ji">
+        <img src="images/logo.png" alt="Logo Jeunes Inspirés"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span class="secours">🔥</span>
+      </div>
+
+      <!-- Titre artistique : chaque lettre arrive puis ondule -->
+      <h1 class="sr-only">Jeunes Inspirés</h1>
+      <div class="titre" aria-hidden="true">
+        <div class="mot mot1">
+          <span style="--i:0">J</span><span style="--i:1">e</span><span style="--i:2">u</span><span style="--i:3">n</span><span style="--i:4">e</span><span style="--i:5">s</span>
+        </div>
+        <div class="mot mot2">
+          <span style="--i:6">I</span><span style="--i:7">n</span>
+          <span style="--i:8">s</span>
+          <span style="--i:9">p</span><span style="--i:10">i</span><span style="--i:11">r</span><span style="--i:12">é</span><span style="--i:13">s</span>
+        </div>
+      </div>
+
+      <svg class="trait" viewBox="0 0 170 16" aria-hidden="true">
+        <path d="M4 9 Q 25 -2 46 9 T 88 9 T 130 9 T 166 9"/>
+      </svg>
+
+      <p class="slogan entree" style="--delai:1.9s">Une jeunesse consciente, compétente et engagée</p>
+
+      <a class="bouton entree" style="--delai:2.2s" href="accueil.html">Commencer</a>
+    </div>
+
+    <!-- Signature : logo LAMARA seul -->
+    <div class="signature entree" style="--delai:2.5s">
+      <small>CONÇU PAR</small>
+      <img src="images/lamara.jpg" alt="LAMARA*"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
+      <b class="nom">LAMARA*</b>
+    </div>
+
+  </div>
+
+  <script src="pwa.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formations - Jeunes Inspirés</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1b1464">
+  <link rel="apple-touch-icon" href="images/icone-192.png">
+</head>
+<body>
+  <div class="telephone">
+
+    <div class="entete">
+      <small>Développe tes talents</small>
+      <h1>Formations 🎓</h1>
+    </div>
+
+    <div class="banniere">
+      <div class="cadre">
+        <img src="images/formations/formationg.jpg" alt="Formations" onerror="this.style.display='none'">
+      </div>
+      <div class="legende"><b>Apprends, grandis, réussis</b></div>
+    </div>
+
+    <!-- Formations à venir -->
+    <h2 class="titre-section">📅 Prochaines formations</h2>
+
+    <div class="carte-photo">
+      <div class="cadre">
+        <img src="images/formations/formation1.jpg" alt="Formation 1" onerror="this.style.display='none'">
+      </div>
+      <div class="texte">
+        <span class="etiquette">IA & Numérique</span>
+        <span class="etiquette etiquette-or">Début : 7 novembre</span>
+        <h3 style="margin-top:8px">Bien utiliser l'intelligence artificielle</h3>
+        <p>Découvrir les assistants IA, rédiger de bonnes instructions, vérifier les informations et utiliser l'IA pour apprendre.</p>
+        <p style="margin-top:8px">
+          🕒 Durée : 2h<br>
+          📍 Lieu : En ligne<br>
+          👥 Pour : 15 à 30 ans<br>
+          💰 Prix : Gratuit
+        </p>
+        <a class="bouton-petit" href="#inscription">S'inscrire</a>
+      </div>
+    </div>
+
+    
+    <!-- Formations terminées -->
+    <h2 class="titre-section">✅ Déjà réalisées</h2>
+
+    <div class="carte">
+      <h3>Initiation à la programmation</h3>
+      <p>Réalisée en septembre · 25 participants</p>
+      <span class="etiquette">Terminée</span>
+    </div>
+
+    <div class="carte">
+      <h3>Créer son premier projet entrepreneurial</h3>
+      <p>Réalisée en juin · 18 participants</p>
+      <span class="etiquette">Terminée</span>
+    </div>
+
+    <!-- Inscription -->
+    <h2 class="titre-section" id="inscription">✍️ Je m'inscris</h2>
+    <div class="carte">
+      <select id="choix"
+        style="width:100%; padding:12px; border:1.5px solid #e7e4f3; border-radius:12px; margin-bottom:10px; font-size:15px; background:white">
+        <option value="">Choisis une formation</option>
+        <option>Bien utiliser l'intelligence artificielle</option>
+        <option>Titre de la formation 2</option>
+        <option>Titre de la formation 3</option>
+      </select>
+      <input type="text" id="nom" placeholder="Ton nom et prénom"
+        style="width:100%; padding:12px; border:1.5px solid #e7e4f3; border-radius:12px; margin-bottom:10px; font-size:15px">
+      <input type="text" id="age" placeholder="Ton âge"
+        style="width:100%; padding:12px; border:1.5px solid #e7e4f3; border-radius:12px; margin-bottom:10px; font-size:15px">
+      <button class="bouton" onclick="sinscrire()" style="width:100%">Envoyer mon inscription</button>
+      <p style="margin-top:10px">L'équipe te répond sur WhatsApp pour confirmer.</p>
+    </div>
+
+    <nav class="menu">
+      <a href="accueil.html">🏠<span>Accueil</span></a>
+      <a href="agenda.html">📅<span>Agenda</span></a>
+      <a href="opportunites.html">💼<span>Opportunités</span></a>
+      <a href="declic.html">⚡<span>JI Déclic</span></a>
+      <a href="profil.html">👤<span>Profil</span></a>
+    </nav>
+
+  </div>
+
+  <script src="pwa.js"></script>
+  <script>
+    function sinscrire() {
+      var formation = document.getElementById('choix').value;
+      var nom = document.getElementById('nom').value.trim();
+      var age = document.getElementById('age').value.trim();
+
+      if (formation === '' || nom === '') {
+        alert("Choisis une formation et écris ton nom 🙂");
+        return;
+      }
+
+      var message = "Inscription à une formation JI\n\n" +
+                    "Formation : " + formation + "\n" +
+                    "Nom : " + nom + "\n" +
+                    "Âge : " + (age || "non précisé");
+
+      window.open("https://wa.me/242050102416?text=" + encodeURIComponent(message), "_blank");
+    }
+  </script>
+</body>
+</html>

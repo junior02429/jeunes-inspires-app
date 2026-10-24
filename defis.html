@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Défis - Jeunes Inspirés</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1b1464">
+  <link rel="apple-touch-icon" href="images/icone-192.png">
+</head>
+<body>
+  <div class="telephone">
+
+    <div class="entete">
+      <small>Petits pas, grands effets</small>
+      <h1>Défis du jour 🎯</h1>
+    </div>
+
+    <div class="banniere">
+      <div class="cadre">
+        <img src="images/defis.jpg" alt="Défis" onerror="this.style.display='none'">
+      </div>
+      <div class="legende"><b>Relève tes défis, grandis chaque jour</b></div>
+    </div>
+
+    <!-- Compteur -->
+    <div class="carte centre">
+      <h3>Défis relevés</h3>
+      <p style="font-size:30px; font-weight:bold; color:#4b2fb8" id="compteur">0 / 3</p>
+      <p id="message">Coche un défi pour commencer 💪</p>
+    </div>
+
+    <!-- Défis -->
+    <div class="carte defi">
+      <input type="checkbox" id="d1">
+      <label for="d1"><h3>🙏 Dis merci à 3 personnes</h3><p>Sincèrement, avec des mots simples.</p></label>
+    </div>
+
+    <div class="carte defi">
+      <input type="checkbox" id="d2">
+      <label for="d2"><h3>📖 Lis 10 pages d'un livre</h3><p>Choisis un livre qui te fait grandir.</p></label>
+    </div>
+
+    <div class="carte defi">
+      <input type="checkbox" id="d3">
+      <label for="d3"><h3>🤗 Encourage un ami</h3><p>Un message, un appel, un geste.</p></label>
+    </div>
+
+    <nav class="menu">
+      <a href="accueil.html">🏠<span>Accueil</span></a>
+      <a href="agenda.html">📅<span>Agenda</span></a>
+      <a href="opportunites.html">💼<span>Opportunités</span></a>
+      <a href="declic.html">⚡<span>JI Déclic</span></a>
+      <a href="profil.html">👤<span>Profil</span></a>
+    </nav>
+
+  </div>
+
+  <script src="pwa.js"></script>
+  <script>
+    var cases = document.querySelectorAll('.defi input');
+    var compteur = document.getElementById('compteur');
+    var message = document.getElementById('message');
+
+    function mettreAJour() {
+      var total = 0;
+      for (var i = 0; i < cases.length; i++) {
+        if (cases[i].checked) { total++; }
+        localStorage.setItem('defi' + i, cases[i].checked);
+      }
+      compteur.textContent = total + ' / ' + cases.length;
+
+      if (total === 0) { message.textContent = 'Coche un défi pour commencer 💪'; }
+      else if (total < cases.length) { message.textContent = 'Bien joué, continue ! 🔥'; }
+      else { message.textContent = 'Bravo, tous les défis sont relevés ! 🏆'; }
+    }
+
+    for (var i = 0; i < cases.length; i++) {
+      cases[i].checked = localStorage.getItem('defi' + i) === 'true';
+      cases[i].addEventListener('change', mettreAJour);
+    }
+    mettreAJour();
+  </script>
+</body>
+</html>

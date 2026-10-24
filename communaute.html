@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Communauté - Jeunes Inspirés</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1b1464">
+  <link rel="apple-touch-icon" href="images/icone-192.png">
+</head>
+<body>
+  <div class="telephone">
+
+    <div class="entete">
+      <small>Ensemble, on grandit</small>
+      <h1>Communauté 💬</h1>
+    </div>
+
+    <div class="banniere">
+      <div class="cadre">
+        <img src="images/communaute.jpg" alt="Communauté" onerror="this.style.display='none'">
+      </div>
+      <div class="legende"><b>Une communauté qui t'élève</b></div>
+    </div>
+
+    <!-- Écrire un message -->
+    <h2 class="titre-section">Écris ton message</h2>
+    <div class="carte">
+      <input type="text" id="prenom" placeholder="Ton prénom"
+        style="width:100%; padding:12px; border:1.5px solid #e7e4f3; border-radius:12px; margin-bottom:10px; font-size:15px">
+      <textarea id="texte" rows="4" placeholder="Partage une pensée, un témoignage, une idée…"
+        style="width:100%; padding:12px; border:1.5px solid #e7e4f3; border-radius:12px; margin-bottom:10px; font-size:15px; resize:none"></textarea>
+      <button class="bouton" onclick="envoyer()" style="width:100%">Envoyer mon message</button>
+      <p style="margin-top:10px">Ton message est relu par l'équipe avant d'être publié.</p>
+    </div>
+
+    <!-- Messages publiés -->
+    <h2 class="titre-section">Messages de la communauté</h2>
+
+    <div class="carte">
+      <h3>Équipe JI</h3>
+      <p>Bienvenue dans l'application Jeunes Inspirés ! 🎉 Ici, on s'encourage, on s'informe et on avance ensemble.</p>
+    </div>
+
+    <div class="carte-photo">
+      <div class="cadre">
+        <img src="images/evenement1.jpg" alt="Atelier" onerror="this.style.display='none'">
+      </div>
+      <div class="texte">
+        <h3>Grâce M.</h3>
+        <p>Merci pour l'atelier de samedi, j'ai enfin osé prendre la parole devant tout le monde. 💪</p>
+      </div>
+    </div>
+
+    <div class="carte">
+      <h3>Daniel K.</h3>
+      <p>Qui est partant pour la journée de service citoyen ? On a besoin de volontaires !</p>
+    </div>
+
+    <nav class="menu">
+      <a href="accueil.html">🏠<span>Accueil</span></a>
+      <a href="agenda.html">📅<span>Agenda</span></a>
+      <a href="opportunites.html">💼<span>Opportunités</span></a>
+      <a href="declic.html">⚡<span>JI Déclic</span></a>
+      <a href="profil.html">👤<span>Profil</span></a>
+    </nav>
+
+  </div>
+
+  <script src="pwa.js"></script>
+  <script>
+    function envoyer() {
+      var prenom = document.getElementById('prenom').value.trim();
+      var texte = document.getElementById('texte').value.trim();
+
+      if (texte === '') {
+        alert("Écris ton message d'abord 🙂");
+        return;
+      }
+
+      var message = "Message pour la communauté JI\nDe : " + (prenom || "Anonyme") + "\n\n" + texte;amaa
+      window.open("https://wa.me/242069534092?text=" + encodeURIComponent(message), "_blank");
+    }
+  </script>
+</body>
+</html>
